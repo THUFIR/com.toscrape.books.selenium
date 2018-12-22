@@ -23,8 +23,36 @@ class WelcomePage {
     }
 
     void populateCatalogue() {
-        WebElement we = webDriver.findElement(By.xpath("//a[contains(text(), 'Books')]/@href"));
-        LOG.info(we.getText());
+//        WebElement we = webDriver.findElement(By.xpath("//a[contains(text(), 'Books')]/@href"));
+  //      LOG.info(we.getText());
     }
 
 }
+
+/*
+
+public class ClientPage {
+    //add client
+    @FindBy(linkText="Admin")
+    WebElement admin;
+    @FindBy(linkText="Clients")
+    WebElement clients;
+    @FindBy(how = How.XPATH, using = "//*[@id=\'search-container\']/a/i")
+    WebElement addClient;
+    @FindBy(how= How.ID, using= "name")
+    WebElement name;
+    @FindBy(how= How.ID, using= "group_id")
+    WebElement group_dropdown;
+    @FindBy(how= How.ID, using= "address")
+    WebElement address;
+    @FindBy(how= How.ID,using= "status")
+    WebElement status_dropdown;
+    @FindBy(how= How.ID, using= "lat")
+    WebElement lat;
+    @FindBy(how= How.ID, using= "lang")
+    WebElement lang;
+    @FindBy(how= How.CLASS_NAME, using= "btn-primary")
+    WebElement buton;
+
+
+*/

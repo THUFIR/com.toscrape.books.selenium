@@ -5,7 +5,6 @@ import java.util.Properties;
 import java.util.logging.Logger;
 import org.openqa.selenium.WebDriver;
 
-
 public class App {
 
     private static final Logger LOG = Logger.getLogger(App.class.getName());
@@ -16,6 +15,7 @@ public class App {
 
     private void initSelenium() throws IOException {
         LOG.fine("starting selenium initialization..");
+
         Properties properties = new Properties();
         properties.loadFromXML(App.class.getResourceAsStream("/selenium.xml"));
         LOG.fine(properties.toString());
