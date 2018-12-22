@@ -3,6 +3,8 @@ package dur.bounceme.net.SeleniumBase;
 import java.io.IOException;
 import java.util.Properties;
 import java.util.logging.Logger;
+import org.openqa.selenium.WebDriver;
+
 
 public class App {
 
@@ -17,7 +19,10 @@ public class App {
         Properties properties = new Properties();
         properties.loadFromXML(App.class.getResourceAsStream("/selenium.xml"));
         LOG.fine(properties.toString());
-        SeleniumBrowser seleniumBrowser = SeleniumBrowser.defaultPage(properties);
-        seleniumBrowser.browseToURL();
+        BookScraper bookScraper = BookScraper.defaultPage(properties);
+        bookScraper.init();
+        WebDriver webDriver = bookScraper.getWebDriver();
+        Welcome w = Welcome.populateCatalogue(webDriver);
+        bookScraper.close();
     }
 }
