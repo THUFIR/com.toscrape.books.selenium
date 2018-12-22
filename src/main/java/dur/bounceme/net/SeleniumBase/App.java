@@ -22,7 +22,8 @@ public class App {
         BookScraper bookScraper = BookScraper.defaultPage(properties);
         bookScraper.init();
         WebDriver webDriver = bookScraper.getWebDriver();
-        Welcome w = Welcome.populateCatalogue(webDriver);
+        WelcomePage welcomePage = WelcomePage.init(webDriver);
+        welcomePage.populateCatalogue();
         bookScraper.close();
     }
 }
