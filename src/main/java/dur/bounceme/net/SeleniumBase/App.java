@@ -11,6 +11,6 @@ public class App {
     }
 
     private void initSelenium() {
-        LOG.info("starting selenium initialization..");
+        LOG.fine("starting selenium initialization..");
     }
 }
