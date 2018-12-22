@@ -1,0 +1,15 @@
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <comment>selenium config and vehicle type</comment>
+    <entry key="driver">driver=webdriver.gecko.driver</entry>
+    <entry key="gecko">/home/thufir/.geckodriver</entry>
+    <entry key="gecko_dir">/home/thufir/.gecko</entry>
+    <entry key="url">http://www.autotrader.com/</entry>
+    <entry key="username">user</entry>
+    <entry key="options01">--headless</entry>
+    <entry key="make">Audi</entry>
+    <entry key="model">A4</entry>
+    <entry key="year">2018</entry>
+    <entry key="driverWaitSeconds">30</entry>    
+    <entry key="option01">--headless</entry>    
+</properties>
