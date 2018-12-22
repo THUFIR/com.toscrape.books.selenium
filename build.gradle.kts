@@ -21,6 +21,8 @@ repositories {
 }
 
 dependencies {
+    compile (group= "org.seleniumhq.selenium", name = "selenium-java", version = "3.+" )
+
     // This dependency is found on compile classpath of this component and consumers.
     implementation("com.google.guava:guava:26.0-jre")
 
