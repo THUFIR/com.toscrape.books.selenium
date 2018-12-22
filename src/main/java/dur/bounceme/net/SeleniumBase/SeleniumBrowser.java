@@ -13,9 +13,9 @@ import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
-public class Selenium101 {
+public class SeleniumBrowser {
 
-    private static final Logger LOG = Logger.getLogger(Selenium101.class.getName());
+    private static final Logger LOG = Logger.getLogger(SeleniumBrowser.class.getName());
 
     private Properties properties = new Properties();
     private FirefoxBinary firefoxBinary = null;
@@ -28,10 +28,10 @@ public class Selenium101 {
     private String username = null;
     private String password = null;
 
-    private Selenium101() {
+    private SeleniumBrowser() {
     }
 
-    private Selenium101(Properties properties) throws MalformedURLException {
+    private SeleniumBrowser(Properties properties) throws MalformedURLException {
         this.properties = properties;
         LOG.fine(properties.toString());
         url = new URL(properties.getProperty("url"));
@@ -43,8 +43,8 @@ public class Selenium101 {
         commandLineOptions.add(commandLineOption);
     }
 
-    public static Selenium101 defaultPage(Properties properties) throws MalformedURLException {
-        return new Selenium101(properties);
+    public static SeleniumBrowser defaultPage(Properties properties) throws MalformedURLException {
+        return new SeleniumBrowser(properties);
     }
 
     public void browseToURL() throws MalformedURLException {
