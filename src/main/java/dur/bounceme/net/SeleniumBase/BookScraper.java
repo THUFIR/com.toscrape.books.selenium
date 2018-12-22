@@ -35,13 +35,14 @@ public class BookScraper {
         gecko = properties.getProperty("gecko");
         String commandLineOption = properties.getProperty("option01");
         commandLineOptions.add(commandLineOption);
+        init();
     }
 
     static BookScraper defaultPage(Properties properties) throws MalformedURLException {
         return new BookScraper(properties);
     }
 
-    void init() throws MalformedURLException {
+    private void init() throws MalformedURLException {
         firefoxBinary = new FirefoxBinary();
         commandLineOptions.forEach((commandLineOption) -> {
             LOG.fine(commandLineOption.toString());

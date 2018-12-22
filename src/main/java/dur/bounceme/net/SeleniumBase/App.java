@@ -20,7 +20,6 @@ public class App {
         properties.loadFromXML(App.class.getResourceAsStream("/selenium.xml"));
         LOG.fine(properties.toString());
         BookScraper bookScraper = new BookScraper(properties);
-        bookScraper.init();
         WebDriver webDriver = bookScraper.getWebDriver();
         WelcomePage welcomePage = new WelcomePage(webDriver);
         welcomePage.populateCatalogue();
