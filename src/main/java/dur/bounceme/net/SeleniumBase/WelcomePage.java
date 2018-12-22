@@ -32,12 +32,10 @@ class WelcomePage {
     }
 
     void populateCatalogue() {
-        LOG.info("start..");
-        LOG.info(links.toString());
+        LOG.fine("start..");
         for (WebElement webElement : links) {
             LOG.info(webElement.getText());
         }
-        LOG.info("..done");
+        LOG.fine("..done");
     }
-
 }
