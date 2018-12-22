@@ -1,9 +1,7 @@
 package dur.bounceme.net.SeleniumBase;
 
 import java.util.logging.Logger;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 class WelcomePage {
 
@@ -23,8 +21,12 @@ class WelcomePage {
     }
 
     void populateCatalogue() {
+        
+      //  @FindBy(linkText = "Admin")
+      //  WebElement admin;
+
 //        WebElement we = webDriver.findElement(By.xpath("//a[contains(text(), 'Books')]/@href"));
-  //      LOG.info(we.getText());
+        //      LOG.info(we.getText());
     }
 
 }
@@ -55,4 +57,4 @@ public class ClientPage {
     WebElement buton;
 
 
-*/
+ */

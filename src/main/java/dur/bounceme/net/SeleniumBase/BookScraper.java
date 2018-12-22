@@ -27,7 +27,7 @@ public class BookScraper {
     private BookScraper() {
     }
 
-    private BookScraper(Properties properties) throws MalformedURLException {
+    BookScraper(Properties properties) throws MalformedURLException {
         this.properties = properties;
         LOG.fine(properties.toString());
         url = new URL(properties.getProperty("url"));

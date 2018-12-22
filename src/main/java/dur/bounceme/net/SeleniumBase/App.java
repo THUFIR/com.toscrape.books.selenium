@@ -19,11 +19,28 @@ public class App {
         Properties properties = new Properties();
         properties.loadFromXML(App.class.getResourceAsStream("/selenium.xml"));
         LOG.fine(properties.toString());
-        BookScraper bookScraper = BookScraper.defaultPage(properties);
+        BookScraper bookScraper = new BookScraper(properties);
         bookScraper.init();
         WebDriver webDriver = bookScraper.getWebDriver();
-        WelcomePage welcomePage = WelcomePage.init(webDriver);
+        WelcomePage welcomePage = new WelcomePage(webDriver);
         welcomePage.populateCatalogue();
         bookScraper.close();
     }
 }
+
+
+
+/*
+
+
+
+public void testSuccessfulLogin() {
+
+   LoginPage login = new LoginPage(driver);
+
+   MainPage main = login.signInWith(EMAIL, PASSWORD);
+
+   assertTrue(main.isUserSignedIn() == true);
+
+}
+*/
