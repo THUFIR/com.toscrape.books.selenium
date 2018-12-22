@@ -5,6 +5,6 @@
     <entry key="url">http://testing-ground.scraping.pro/login</entry>
     <entry key="driver">webdriver.gecko.driver</entry>
     <entry key="usr">admin</entry>
-    <entry key="pword">12345</entry>
+    <entry key="pwd">12345</entry>
     <entry key="option01">--headless</entry>
 </properties>

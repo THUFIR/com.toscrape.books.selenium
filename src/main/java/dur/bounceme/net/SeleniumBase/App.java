@@ -14,10 +14,13 @@ public class App {
 
     private void initSelenium() throws IOException {
         LOG.fine("starting selenium initialization..");
-        Properties properties = new Properties();
-        properties.load(App.class.getResourceAsStream("/selenium.properties"));
-        LOG.fine(properties.toString());
-        SeleniumBrowser seleniumBrowser = SeleniumBrowser.defaultPage(properties);
+        //Properties p1 = new Properties();
+        Properties p2 = new Properties();
+       // p1.load(App.class.getResourceAsStream("/selenium.properties"));
+        p2.loadFromXML(App.class.getResourceAsStream("/selenium.xml"));
+       // LOG.info(p1.toString());
+        LOG.info(p2.toString());
+        SeleniumBrowser seleniumBrowser = SeleniumBrowser.defaultPage(p2);
         seleniumBrowser.browseToURL();
     }
 }
