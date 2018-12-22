@@ -5,6 +5,7 @@ import java.util.logging.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 class WelcomePage {
 
@@ -22,6 +23,7 @@ class WelcomePage {
 
     WelcomePage(WebDriver webDriver) {
         this.webDriver = webDriver;
+        PageFactory.initElements(this.webDriver, this);
         LOG.info(webDriver.getCurrentUrl());
     }
 
@@ -31,15 +33,10 @@ class WelcomePage {
 
     void populateCatalogue() {
         LOG.info("start..");
-        //  WebElement foo = webDriver.findElement(By.xpath("//a[contains(text(), 'Books')]"));
-        //   LOG.info(foo.toString());
-        //   LOG.info(foo.getText());
-        //   LOG.info(foo.getTagName());        
-        //   LOG.info(String.valueOf(foo.isEnabled()));    
-
-      //  LOG.info(books.toString());
-      //  LOG.info(books.getText());
-      //  LOG.info(books.getTagName());
+        LOG.info(links.toString());
+        for (WebElement webElement : links) {
+            LOG.info(webElement.getText());
+        }
         LOG.info("..done");
     }
 
