@@ -30,7 +30,7 @@ dependencies {
 
 application {
     // Define the main class for the application
-    mainClassName = "SeleniumBase.App"
+    mainClassName = "dur.bounceme.net.SeleniumBase.App"
 }
 
 val test by tasks.getting(Test::class) {
