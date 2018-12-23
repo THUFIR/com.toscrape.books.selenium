@@ -11,9 +11,9 @@ import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
-public class BookScraper {
+public class DriverFactory {
 
-    private static final Logger LOG = Logger.getLogger(BookScraper.class.getName());
+    private static final Logger LOG = Logger.getLogger(DriverFactory.class.getName());
 
     private Properties properties = new Properties();
     private FirefoxBinary firefoxBinary = null;
@@ -24,22 +24,27 @@ public class BookScraper {
     private String gecko = null;
     private final List<String> commandLineOptions = new ArrayList<>();
 
-    private BookScraper() {
+    private DriverFactory() {
     }
 
-    BookScraper(Properties properties) throws MalformedURLException {
+    private DriverFactory(Properties properties) throws MalformedURLException {
         this.properties = properties;
+        loadProps();
+        init();
+    }
+
+     static WebDriver getWebDriver(Properties properties) throws MalformedURLException {
+        DriverFactory driverFactory = new DriverFactory(properties);
+        return driverFactory.webDriver;
+    }
+
+    private void loadProps() throws MalformedURLException {
         LOG.fine(properties.toString());
         url = new URL(properties.getProperty("url"));
         driver = properties.getProperty("driver");
         gecko = properties.getProperty("gecko");
         String commandLineOption = properties.getProperty("option01");
         commandLineOptions.add(commandLineOption);
-        init();
-    }
-
-    static BookScraper defaultPage(Properties properties) throws MalformedURLException {
-        return new BookScraper(properties);
     }
 
     private void init() throws MalformedURLException {
@@ -55,10 +60,6 @@ public class BookScraper {
         webDriver.get(url.toString());
         LOG.fine(webDriver.getTitle());
         LOG.fine(webDriver.getCurrentUrl().toLowerCase());
-    }
-
-    WebDriver getWebDriver() {
-        return webDriver;
     }
 
     void close() {

@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.logging.Logger;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
 
 public class App {
 
@@ -15,14 +16,12 @@ public class App {
 
     private void initSelenium() throws IOException {
         LOG.fine("starting selenium initialization..");
-
         Properties properties = new Properties();
         properties.loadFromXML(App.class.getResourceAsStream("/selenium.xml"));
-        LOG.fine(properties.toString());
-        BookScraper bookScraper = new BookScraper(properties);
-        WebDriver webDriver = bookScraper.getWebDriver();
-        WelcomePage welcomePage = new WelcomePage(webDriver);
-        welcomePage.populateCatalogue();
-        bookScraper.close();
+        //DriverFactory driverFactory = new DriverFactory(properties); //doesn't smell good
+//        WebDriver webDriver = DriverFactory.getWebDriver(properties);
+        WebDriver foo = DriverFactory.getWebDriver(properties);
+
+//        HomePage homePage = PageFactory.initElements(webDriver, HomePage.class);
     }
 }

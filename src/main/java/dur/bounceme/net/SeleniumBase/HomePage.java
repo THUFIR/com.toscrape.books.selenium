@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-class WelcomePage {
+class HomePage {
 
     private static final Logger LOG = Logger.getLogger(App.class.getName());
     private WebDriver webDriver = null;
@@ -18,17 +18,17 @@ class WelcomePage {
     @FindBy(tagName = "a")
     List<WebElement> links;
 
-    private WelcomePage() {
+    private HomePage() {
     }
 
-    WelcomePage(WebDriver webDriver) {
+    HomePage(WebDriver webDriver) {
         this.webDriver = webDriver;
         PageFactory.initElements(this.webDriver, this);
         LOG.info(webDriver.getCurrentUrl());
     }
 
-    static WelcomePage init(WebDriver webDriver) {
-        return new WelcomePage(webDriver);
+    static HomePage init(WebDriver webDriver) {
+        return new HomePage(webDriver);
     }
 
     void populateCatalogue() {
@@ -39,3 +39,12 @@ class WelcomePage {
         LOG.fine("..done");
     }
 }
+
+
+/*
+public HompePage(WebDriver driver) 
+{           
+   this.driver = driver; 
+   PageFactory.initElements(driver, this);
+}
+*/
