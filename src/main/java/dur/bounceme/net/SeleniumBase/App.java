@@ -11,13 +11,15 @@ public class App {
     private Properties properties = new Properties();
 
     public static void main(String[] args) throws IOException {
-        new App().initSelenium();
+        new App().scrapeBooks();
     }
 
-    private void initSelenium() throws IOException {
+    private void scrapeBooks() throws IOException {
         properties.loadFromXML(App.class.getResourceAsStream("/selenium.xml"));
         WebDriver webDriver = DriverFactory.getWebDriver(properties);  //is this factory and usage correct?
         HomePage homePage = new HomePage(webDriver);
         homePage.populateCatalogue();
+        CatalogueFragment catalogueFragment = new CatalogueFragment(webDriver);
+        catalogueFragment.populateCatalogue();
     }
 }

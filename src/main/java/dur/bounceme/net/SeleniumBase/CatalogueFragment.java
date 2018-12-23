@@ -11,7 +11,6 @@ public class CatalogueFragment extends HomePage {
         super(webDriver);
     }
 
-    
     @Override
     public void populateCatalogue() {
         LOG.fine("start..");
@@ -20,5 +19,5 @@ public class CatalogueFragment extends HomePage {
         });
         LOG.fine("..done");
     }
-    
+
 }

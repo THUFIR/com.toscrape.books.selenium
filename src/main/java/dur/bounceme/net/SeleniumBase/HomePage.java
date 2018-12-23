@@ -24,7 +24,7 @@ class HomePage extends AbstractPage {
     HomePage(WebDriver webDriver) {
         LOG.info(webDriver.getCurrentUrl());
         this.webDriver = webDriver;
-        PageFactory.initElements(this.webDriver, this);
+        PageFactory.initElements(webDriver, this);
     }
 
     public void populateCatalogue() {
