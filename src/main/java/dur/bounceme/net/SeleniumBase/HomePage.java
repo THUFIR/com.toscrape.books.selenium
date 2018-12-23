@@ -10,28 +10,28 @@ import org.openqa.selenium.support.PageFactory;
 class HomePage {
 
     private static final Logger LOG = Logger.getLogger(App.class.getName());
-    private WebDriver webDriver = null;
+    public WebDriver webDriver = null;
 
     @FindBy(partialLinkText = "Books")
-    private WebElement books;
+    public WebElement books;
 
     @FindBy(tagName = "a")
-    private List<WebElement> links;
+    public List<WebElement> links;
 
-    private HomePage() {
+    public HomePage() {
     }
 
-    HomePage(WebDriver webDriver) {
+    public HomePage(WebDriver webDriver) {
+        LOG.info(webDriver.getCurrentUrl());
         this.webDriver = webDriver;
         PageFactory.initElements(this.webDriver, this);
-        LOG.info(webDriver.getCurrentUrl());
     }
 
-    static HomePage init(WebDriver webDriver) {
+    public static HomePage init(WebDriver webDriver) {
         return new HomePage(webDriver);
     }
 
-    void populateCatalogue() {
+    public void populateCatalogue() {
         LOG.fine("start..");
         for (WebElement webElement : links) {
             LOG.info(webElement.getText());

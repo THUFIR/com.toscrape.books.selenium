@@ -9,17 +9,16 @@ import org.openqa.selenium.support.PageFactory;
 public class App {
 
     private static final Logger LOG = Logger.getLogger(App.class.getName());
+    private Properties properties = new Properties();
 
     public static void main(String[] args) throws IOException {
         new App().initSelenium();
     }
 
     private void initSelenium() throws IOException {
-        LOG.fine("starting selenium initialization..");
-        Properties properties = new Properties();
         properties.loadFromXML(App.class.getResourceAsStream("/selenium.xml"));
         WebDriver webDriver = DriverFactory.getWebDriver(properties);
-        HomePage homePage = PageFactory.initElements(webDriver, HomePage.class);
+        HomePage homePage = new HomePage(webDriver);
         homePage.populateCatalogue();
     }
 }
