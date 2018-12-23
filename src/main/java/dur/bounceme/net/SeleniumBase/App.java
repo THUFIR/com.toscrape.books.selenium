@@ -18,10 +18,8 @@ public class App {
         LOG.fine("starting selenium initialization..");
         Properties properties = new Properties();
         properties.loadFromXML(App.class.getResourceAsStream("/selenium.xml"));
-        //DriverFactory driverFactory = new DriverFactory(properties); //doesn't smell good
-//        WebDriver webDriver = DriverFactory.getWebDriver(properties);
-        WebDriver foo = DriverFactory.getWebDriver(properties);
-
-//        HomePage homePage = PageFactory.initElements(webDriver, HomePage.class);
+        WebDriver webDriver = DriverFactory.getWebDriver(properties);
+        HomePage homePage = PageFactory.initElements(webDriver, HomePage.class);
+        homePage.populateCatalogue();
     }
 }

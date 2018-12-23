@@ -16,7 +16,7 @@ class HomePage {
     private WebElement books;
 
     @FindBy(tagName = "a")
-    List<WebElement> links;
+    private List<WebElement> links;
 
     private HomePage() {
     }
@@ -47,4 +47,4 @@ public HompePage(WebDriver driver)
    this.driver = driver; 
    PageFactory.initElements(driver, this);
 }
-*/
+ */
