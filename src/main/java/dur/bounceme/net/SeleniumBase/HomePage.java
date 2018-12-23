@@ -16,7 +16,7 @@ class HomePage extends AbstractPage {
     private WebElement books;
 
     @FindBy(tagName = "a")
-    private List<WebElement> links;
+     List<WebElement> links;
 
     private HomePage() {
     }
