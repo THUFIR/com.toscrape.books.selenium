@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.logging.Logger;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.PageFactory;
 
 public class App {
 
