@@ -10,25 +10,21 @@ import org.openqa.selenium.support.PageFactory;
 class HomePage {
 
     private static final Logger LOG = Logger.getLogger(App.class.getName());
-    public WebDriver webDriver = null;
+    private WebDriver webDriver = null;
 
     @FindBy(partialLinkText = "Books")
-    public WebElement books;
+    private WebElement books;
 
     @FindBy(tagName = "a")
-    public List<WebElement> links;
+    private List<WebElement> links;
 
-    public HomePage() {
+    private HomePage() {
     }
 
-    public HomePage(WebDriver webDriver) {
+    HomePage(WebDriver webDriver) {
         LOG.info(webDriver.getCurrentUrl());
         this.webDriver = webDriver;
         PageFactory.initElements(this.webDriver, this);
-    }
-
-    public static HomePage init(WebDriver webDriver) {
-        return new HomePage(webDriver);
     }
 
     public void populateCatalogue() {
@@ -39,12 +35,3 @@ class HomePage {
         LOG.fine("..done");
     }
 }
-
-
-/*
-public HompePage(WebDriver driver) 
-{           
-   this.driver = driver; 
-   PageFactory.initElements(driver, this);
-}
- */
