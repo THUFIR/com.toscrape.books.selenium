@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-class HomePage {
+class HomePage extends AbstractPage {
 
     private static final Logger LOG = Logger.getLogger(App.class.getName());
     private WebDriver webDriver = null;
@@ -29,9 +29,9 @@ class HomePage {
 
     public void populateCatalogue() {
         LOG.fine("start..");
-        for (WebElement webElement : links) {
+        links.forEach((webElement) -> {
             LOG.info(webElement.getText());
-        }
+        });
         LOG.fine("..done");
     }
 }
