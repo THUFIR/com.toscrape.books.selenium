@@ -26,20 +26,3 @@ public class App {
         bookScraper.close();
     }
 }
-
-
-
-/*
-
-
-
-public void testSuccessfulLogin() {
-
-   LoginPage login = new LoginPage(driver);
-
-   MainPage main = login.signInWith(EMAIL, PASSWORD);
-
-   assertTrue(main.isUserSignedIn() == true);
-
-}
-*/
