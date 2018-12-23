@@ -16,7 +16,7 @@ public class App {
 
     private void initSelenium() throws IOException {
         properties.loadFromXML(App.class.getResourceAsStream("/selenium.xml"));
-        WebDriver webDriver = DriverFactory.getWebDriver(properties);
+        WebDriver webDriver = DriverFactory.getWebDriver(properties);  //is this factory and usage correct?
         HomePage homePage = new HomePage(webDriver);
         homePage.populateCatalogue();
     }
