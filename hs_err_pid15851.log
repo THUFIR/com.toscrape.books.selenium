@@ -1,0 +1,96 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007f9ff90695fa, pid=15851, tid=0x00007f9fd510c700
+#
+# JRE version: OpenJDK Runtime Environment (8.0_191-b12) (build 1.8.0_191-8u191-b12-0ubuntu0.18.10.1-b12)
+# Java VM: OpenJDK 64-Bit Server VM (25.191-b12 mixed mode linux-amd64 compressed oops)
+# Problematic frame:
+# v  ~BufferBlob::jni_fast_GetLongField
+#
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007f9fac0e8800):  JavaThread "AWT-XAWT" daemon [_thread_in_native, id=15869, stack(0x00007f9fd4f0c000,0x00007f9fd510d000)]
+
+siginfo: si_signo: 11 (SIGSEGV), si_code: 1 (SEGV_MAPERR), si_addr: 0x0000000000000000
+
+Registers:
+RAX=0x00007fa00d811080, RBX=0x00007f9fac0e89e0, RCX=0x0000000000000000, RDX=0x0000000000000042
+RSP=0x00007f9fd510b7b8, RBP=0x00007f9fd510b7e0, RSI=0x0000000000000000, RDI=0x00007f9fac0e89e0
+R8 =0x00007f9fd73c7050, R9 =0x0000000000000000, R10=0x0000000000008c7a, R11=0x0000000000000320
+R12=0x0000000000000000, R13=0x0000000000000000, R14=0x00007f9fd7728b00, R15=0x00007f9fac0e8800
+RIP=0x00007f9ff90695fa, EFLAGS=0x0000000000010246, CSGSFS=0x002b000000000033, ERR=0x0000000000000004
+  TRAPNO=0x000000000000000e
+
+Top of Stack: (sp=0x00007f9fd510b7b8)
+0x00007f9fd510b7b8:   00007f9fd7705134 0000000000000000
+0x00007f9fd510b7c8:   0000000000000000 00000000c0f1f860
+0x00007f9fd510b7d8:   00007f9fd510b860 00007f9fcc0569f0
+0x00007f9fd510b7e8:   00007f9fd73cf3ad 0000000000000000
+0x00007f9fd510b7f8:   00007f9fd510b820 0000000000000000
+0x00007f9fd510b808:   00007f9fd73c7073 00000000c0f1f860
+0x00007f9fd510b818:   00007f9fd76fd1bf 00007f9fd510b870
+0x00007f9fd510b828:   00007f9ff9983e76 00000000f550a650
+0x00007f9fd510b838:   0000000000000001 00000000f550a638
+0x00007f9fd510b848:   00000000f550a5e0 0000000100000ea8
+0x00007f9fd510b858:   0000000000000001 00000000c01cb208
+0x00007f9fd510b868:   00007f9ff906f505 00000000c00ff050
+0x00007f9fd510b878:   00007fa000235818 00000000c00fef50
+0x00007f9fd510b888:   00000000c0438f70 0000000000000000
+0x00007f9fd510b898:   00000001000e8028 00000001000487c0
+0x00007f9fd510b8a8:   0000000100011098 000000010012b828
+0x00007f9fd510b8b8:   0000000000000000 c00fef50c00fef50
+0x00007f9fd510b8c8:   00000000f550a710 0000000000000000
+0x00007f9fd510b8d8:   00007f9fd510b920 00000000c013ba18
+0x00007f9fd510b8e8:   00000000c013ba28 0000000000000000
+0x00007f9fd510b8f8:   0000000000000000 0000000000000001
+0x00007f9fd510b908:   0000000000000000 00007f9fd510b970
+0x00007f9fd510b918:   00007f9ff9007ffd deaddeaf00000000
+0x00007f9fd510b928:   00000000c0438f70 00007f9fd510b930
+0x00007f9fd510b938:   00007f9fd5a5ed8d 00007f9fd510b980
+0x00007f9fd510b948:   00007f9fd5a68718 0000000000000000
+0x00007f9fd510b958:   00007f9fd5a5ed98 00007f9fd510b920
+0x00007f9fd510b968:   00007f9fd510b980 00007f9fd510b9c8
+0x00007f9fd510b978:   00007f9ff9008042 00000000c0438f70
+0x00007f9fd510b988:   00007f9fd510b988 00007f9ff82d66cb
+0x00007f9fd510b998:   00007f9fd510b9d8 00007f9ff835e3e8
+0x00007f9fd510b9a8:   0000000000000000 00007f9ff82d66d8 
+
+Instructions: (pc=0x00007f9ff90695fa)
+0x00007f9ff90695da:   00 00 00 00 00 00 44 8b 15 75 46 7d 14 4c 8b ce
+0x00007f9ff90695ea:   41 f6 c2 01 0f 85 2e 00 00 00 4d 33 ca 4d 33 ca
+0x00007f9ff90695fa:   4d 8b 09 4c 8b da 49 c1 eb 02 4b 8b 04 19 49 bb
+0x00007f9ff906960a:   5c dc 83 0d a0 7f 00 00 4c 33 d8 4c 33 d8 45 3b 
+
+Register to memory mapping:
+
+RAX=0x00007fa00d811080: <offset 0xc7a080> in /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/server/libjvm.so at 0x00007fa00cb97000
+RBX=0x00007f9fac0e89e0 is an unknown value
+RCX=0x0000000000000000 is an unknown value
+RDX=0x0000000000000042 is an unknown value
+RSP=0x00007f9fd510b7b8 is pointing into the stack for thread: 0x00007f9fac0e8800
+RBP=0x00007f9fd510b7e0 is pointing into the stack for thread: 0x00007f9fac0e8800
+RSI=0x0000000000000000 is an unknown value
+RDI=0x00007f9fac0e89e0 is an unknown value
+R8 =0x00007f9fd73c7050: <offset 0x5c050> in /usr/lib/x86_64-linux-gnu/libX11.so.6 at 0x00007f9fd736b000
+R9 =0x0000000000000000 is an unknown value
+R10=0x0000000000008c7a is an unknown value
+R11=0x0000000000000320 is an unknown value
+R12=0x0000000000000000 is an unknown value
+R13=0x0000000000000000 is an unknown value
+R14=0x00007f9fd7728b00: <offset 0x59b00> in /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libawt_xawt.so at 0x00007f9fd76cf000
+R15=0x00007f9fac0e8800 is a thread
+
+
+Stack: [0x00007f9fd4f0c000,0x00007f9fd510d000],  sp=0x00007f9fd510b7b8,  free space=2045k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+v  ~BufferBlob::jni_fast_GetLongField
+C

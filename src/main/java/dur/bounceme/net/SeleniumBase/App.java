@@ -16,7 +16,7 @@ public class App {
 
     private void scrapeBooks() throws IOException {
         properties.loadFromXML(App.class.getResourceAsStream("/selenium.xml"));
-        WebDriver webDriver = DriverFactory.getWebDriver(properties);  //is this factory and usage correct?
+        WebDriver webDriver = FirefoxDriverFactory.getWebDriver(properties);
         HomePage homePage = new HomePage(webDriver);
         homePage.populateCatalogue();
         CatalogueFragment catalogueFragment = new CatalogueFragment(webDriver);
