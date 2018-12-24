@@ -28,17 +28,11 @@ class HomePage extends AbstractPage {
     }
 
     public void populateCatalogue() {
-        for (WebElement webElement : links) {
+        links.stream().map((webElement) -> {
             LOG.info(webElement.getText());
+            return webElement;
+        }).forEachOrdered((webElement) -> {
             LOG.info(webElement.getAttribute("href"));
-        }
-    }
-
-    private void foo() {
-        LOG.fine("start..");
-        links.forEach((webElement) -> {
-            LOG.info(webElement.getText());
         });
-        LOG.fine("..done");
     }
 }
