@@ -20,5 +20,6 @@ public class App {
         HomePage homePage = new HomePage(webDriver);
         CatalogueFragment catalogueFragment = new CatalogueFragment(webDriver);
         homePage.populateCatalogue();
+        homePage.frag();
     }
 }

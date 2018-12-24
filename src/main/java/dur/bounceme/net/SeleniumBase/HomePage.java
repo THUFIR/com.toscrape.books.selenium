@@ -2,6 +2,7 @@ package dur.bounceme.net.SeleniumBase;
 
 import java.util.List;
 import java.util.logging.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -17,6 +18,8 @@ class HomePage extends AbstractPage {
 
     @FindBy(xpath = "//div[@class='side_categories']/ul/li/ul/li/a")
     private List<WebElement> links;
+
+    private final String xpathString = "//div[@class='side_categories']/ul/li/ul/li/a";
 
     private HomePage() {
     }
@@ -35,4 +38,27 @@ class HomePage extends AbstractPage {
             LOG.info(webElement.getAttribute("href"));
         });
     }
+
+    public void frag() {
+        LOG.info(xpathString);
+        WebElement container;
+        container = webDriver.findElement(By.xpath(xpathString));
+        CatalogueFragment cf;
+        //   cf = new CatalogueFragment(webDriver);
+//        cf = new CatalogueFragment(container);
+        cf = new CatalogueFragment(webDriver, container);
+//        cf.foo(container);
+
+        cf.foo();
+    }
+
 }
+
+/*
+
+    public FacebookPostFragment getPostByIndex(int n) {
+        WebElement container = driver.findElement(By.xpath(String.format(
+                "(//div[@class='%s'])[%d]", POST_CONTAINER_CLASS,n )));
+        return new FacebookPostFragment(container);
+}
+ */
