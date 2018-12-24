@@ -45,21 +45,8 @@ class HomePage extends AbstractPage {
         WebElement container;
         container = webDriver.findElement(By.xpath(xpathString));
         CatalogueFragment cf;
-        //   cf = new CatalogueFragment(webDriver);
-//        cf = new CatalogueFragment(container);
         cf = new CatalogueFragment(webDriver, container);
-//        cf.foo(container);
-
-        cf.foo();
+        cf.iterate();
     }
 
 }
-
-/*
-
-    public FacebookPostFragment getPostByIndex(int n) {
-        WebElement container = driver.findElement(By.xpath(String.format(
-                "(//div[@class='%s'])[%d]", POST_CONTAINER_CLASS,n )));
-        return new FacebookPostFragment(container);
-}
- */

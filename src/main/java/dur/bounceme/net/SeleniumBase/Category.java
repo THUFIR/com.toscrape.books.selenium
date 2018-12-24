@@ -1,3 +1,4 @@
+
 package dur.bounceme.net.SeleniumBase;
 
 import java.util.List;
@@ -7,7 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class CatalogueFragment /*extends HomePage */ {
+public class Category {
 
     private static final Logger LOG = Logger.getLogger(CatalogueFragment.class.getName());
     private WebDriver webDriver = null;
@@ -16,10 +17,10 @@ public class CatalogueFragment /*extends HomePage */ {
     @FindBy(xpath = "//ul/li/ul/li/a")
     private final List<WebElement> links = null;
 
-    private CatalogueFragment() {
+    private Category() {
     }
 
-    public CatalogueFragment(WebDriver webDriver, WebElement container) {
+    public Category(WebDriver webDriver, WebElement container) {
         LOG.info(webDriver.getCurrentUrl());
         this.webDriver = webDriver;
         PageFactory.initElements(webDriver, this);
