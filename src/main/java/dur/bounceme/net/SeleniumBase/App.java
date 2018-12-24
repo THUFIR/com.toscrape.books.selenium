@@ -18,10 +18,7 @@ public class App {
         properties.loadFromXML(App.class.getResourceAsStream("/selenium.xml"));
         WebDriver webDriver = FirefoxDriverFactory.getWebDriver(properties);
         HomePage homePage = new HomePage(webDriver);
-//        homePage.populateCatalogue();
         CatalogueFragment catalogueFragment = new CatalogueFragment(webDriver);
-//        catalogueFragment.populateCatalogue();
-
-        homePage.foo();
+        homePage.populateCatalogue();
     }
 }

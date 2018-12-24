@@ -30,7 +30,7 @@ class HomePage extends AbstractPage {
         PageFactory.initElements(webDriver, this);
     }
 
-    public void foo() {
+    public void populateCatalogue() {
 //        WebElement container = webDriver.findElement(By.xpath(String.format("(//div[@class='%s'])[%d]", POST_CONTAINER_CLASS, n)));
         for (WebElement webElement : links) {
             LOG.info(webElement.getText());
@@ -38,7 +38,7 @@ class HomePage extends AbstractPage {
         }
     }
 
-    private void populateCatalogue() {
+    private void foo() {
         LOG.fine("start..");
         links.forEach((webElement) -> {
             LOG.info(webElement.getText());
