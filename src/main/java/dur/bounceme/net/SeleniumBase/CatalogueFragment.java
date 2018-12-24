@@ -12,13 +12,13 @@ public class CatalogueFragment extends HomePage {
     }
 
    
-    private void populateCatalogue() {
-        LOG.fine("start..");
+//    private void populateCatalogue() {
+   //     LOG.fine("start..");
    //     links.forEach((webElement) -> {
     //        LOG.info(webElement.getText());
    //     });
-        LOG.fine("..done");
-    }
+   //     LOG.fine("..done");
+   // }
 
 }
 
