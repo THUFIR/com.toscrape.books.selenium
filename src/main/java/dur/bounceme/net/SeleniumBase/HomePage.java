@@ -16,8 +16,6 @@ class HomePage extends AbstractPage {
     @FindBy(partialLinkText = "Books")
     private WebElement books;
 
-//    @FindBy(tagName = "a")
-//    List<WebElement> links;
     @FindBy(xpath = "//div[@class='side_categories']/ul/li/ul/li/a")
     private List<WebElement> links;
 
@@ -31,7 +29,6 @@ class HomePage extends AbstractPage {
     }
 
     public void populateCatalogue() {
-//        WebElement container = webDriver.findElement(By.xpath(String.format("(//div[@class='%s'])[%d]", POST_CONTAINER_CLASS, n)));
         for (WebElement webElement : links) {
             LOG.info(webElement.getText());
             LOG.info(webElement.getAttribute("href"));
@@ -46,39 +43,3 @@ class HomePage extends AbstractPage {
         LOG.fine("..done");
     }
 }
-
-/*
-
-
-    public FacebookPostFragment getPostByIndex(int n) {
-        WebElement container = driver.findElement(By.xpath(String.format(
-                "(//div[@class='%s'])[%d]", POST_CONTAINER_CLASS,n )));
-        return new FacebookPostFragment(container);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Then to get the link and the item name:
-
-for (WebElement webElement : links) {
-    LOG.info(webElement.getText());
-    LOG.info(webElement.getAttribute("href"));
-}
-
-
-
-
-
- */

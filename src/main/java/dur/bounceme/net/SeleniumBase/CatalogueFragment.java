@@ -10,15 +10,5 @@ public class CatalogueFragment extends HomePage {
     public CatalogueFragment(WebDriver webDriver) {
         super(webDriver);
     }
-
-   
-//    private void populateCatalogue() {
-   //     LOG.fine("start..");
-   //     links.forEach((webElement) -> {
-    //        LOG.info(webElement.getText());
-   //     });
-   //     LOG.fine("..done");
-   // }
-
 }
 
