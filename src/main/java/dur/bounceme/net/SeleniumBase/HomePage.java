@@ -2,6 +2,7 @@ package dur.bounceme.net.SeleniumBase;
 
 import java.util.List;
 import java.util.logging.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -15,8 +16,10 @@ class HomePage extends AbstractPage {
     @FindBy(partialLinkText = "Books")
     private WebElement books;
 
-    @FindBy(tagName = "a")
-     List<WebElement> links;
+//    @FindBy(tagName = "a")
+//    List<WebElement> links;
+    @FindBy(xpath = "//div[@class='side_categories']/ul/li/ul/li/a")
+    private List<WebElement> links;
 
     private HomePage() {
     }
@@ -27,7 +30,15 @@ class HomePage extends AbstractPage {
         PageFactory.initElements(webDriver, this);
     }
 
-    public void populateCatalogue() {
+    public void foo() {
+//        WebElement container = webDriver.findElement(By.xpath(String.format("(//div[@class='%s'])[%d]", POST_CONTAINER_CLASS, n)));
+        for (WebElement webElement : links) {
+            LOG.info(webElement.getText());
+            LOG.info(webElement.getAttribute("href"));
+        }
+    }
+
+    private void populateCatalogue() {
         LOG.fine("start..");
         links.forEach((webElement) -> {
             LOG.info(webElement.getText());
@@ -35,3 +46,39 @@ class HomePage extends AbstractPage {
         LOG.fine("..done");
     }
 }
+
+/*
+
+
+    public FacebookPostFragment getPostByIndex(int n) {
+        WebElement container = driver.findElement(By.xpath(String.format(
+                "(//div[@class='%s'])[%d]", POST_CONTAINER_CLASS,n )));
+        return new FacebookPostFragment(container);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Then to get the link and the item name:
+
+for (WebElement webElement : links) {
+    LOG.info(webElement.getText());
+    LOG.info(webElement.getAttribute("href"));
+}
+
+
+
+
+
+ */

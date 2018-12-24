@@ -11,13 +11,14 @@ public class CatalogueFragment extends HomePage {
         super(webDriver);
     }
 
-    @Override
-    public void populateCatalogue() {
+   
+    private void populateCatalogue() {
         LOG.fine("start..");
-        links.forEach((webElement) -> {
-            LOG.info(webElement.getText());
-        });
+   //     links.forEach((webElement) -> {
+    //        LOG.info(webElement.getText());
+   //     });
         LOG.fine("..done");
     }
 
 }
+
