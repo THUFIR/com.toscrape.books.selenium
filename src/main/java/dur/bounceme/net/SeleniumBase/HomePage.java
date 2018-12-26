@@ -19,7 +19,8 @@ class HomePage extends AbstractPage {
     @FindBy(xpath = "//div[@class='side_categories']/ul/li/ul/li/a")
     private List<WebElement> links;
 
-    private final String xpathString = "//div[@class='side_categories']/ul/li/ul/li/a";
+//    private final String xpathString = "//div[@class='side_categories']/ul/li/ul/li/a";
+    private final String xpathString = "//div[@class='side_categories']/ul/li/ul/li";
 
     private HomePage() {
     }
@@ -34,19 +35,14 @@ class HomePage extends AbstractPage {
         links.stream().map((webElement) -> {
             LOG.fine(webElement.getText());
             return webElement;
-        }).forEachOrdered((webElement) -> {
-            LOG.fine(webElement.getAttribute("href"));
-
         });
     }
 
     public void frag() {
         LOG.fine(xpathString);
-        WebElement container;
-        container = webDriver.findElement(By.xpath(xpathString));
-        CatalogueFragment cf;
-        cf = new CatalogueFragment(container);
-        cf.iterate();
+        WebElement container = webDriver.findElement(By.xpath(xpathString));
+        CatalogueFragment catalogueFragment = new CatalogueFragment(container);
+        catalogueFragment.iterate();
     }
 
 }
