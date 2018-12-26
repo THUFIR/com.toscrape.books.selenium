@@ -11,9 +11,9 @@ import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
-public class FirefoxDriverFactory {
+public class WebDriverFactory {
 
-    private static final Logger LOG = Logger.getLogger(FirefoxDriverFactory.class.getName());
+    private static final Logger LOG = Logger.getLogger(WebDriverFactory.class.getName());
 
     private Properties properties = new Properties();
     private FirefoxBinary firefoxBinary = null;
@@ -24,22 +24,24 @@ public class FirefoxDriverFactory {
     private String gecko = null;
     private final List<String> commandLineOptions = new ArrayList<>();
 
-    private FirefoxDriverFactory() {
+    private WebDriverFactory() {
     }
 
-    private FirefoxDriverFactory(Properties properties) throws MalformedURLException {
+    private WebDriverFactory(Properties properties) throws MalformedURLException {
         this.properties = properties;
         loadProps();
         init();
     }
 
-     static WebDriver getWebDriver(Properties properties) throws MalformedURLException {
-        FirefoxDriverFactory driverFactory = new FirefoxDriverFactory(properties);
+    static WebDriver getWebDriver(Properties properties) throws MalformedURLException {
+        WebDriverFactory driverFactory = new WebDriverFactory(properties);
         return driverFactory.webDriver;
     }
 
     private void loadProps() throws MalformedURLException {
         LOG.fine(properties.toString());
+        String driverTypeString = properties.getProperty("driverType");
+        NewEnum ne =  NewEnum.firefox;
         url = new URL(properties.getProperty("url"));
         driver = properties.getProperty("driver");
         gecko = properties.getProperty("gecko");

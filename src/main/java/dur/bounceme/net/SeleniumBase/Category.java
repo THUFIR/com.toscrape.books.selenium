@@ -21,19 +21,19 @@ public class Category {
     }
 
     public Category(WebDriver webDriver, WebElement container) {
-        LOG.info(webDriver.getCurrentUrl());
+        LOG.fine(webDriver.getCurrentUrl());
         this.webDriver = webDriver;
         PageFactory.initElements(webDriver, this);
         this.container = container;
     }
 
     public void iterate() {
-        LOG.info(container.toString());
-        LOG.info(container.getTagName());
-        LOG.info(container.getText());
-        LOG.info(container.getLocation().toString());
+        LOG.fine(container.toString());
+        LOG.fine(container.getTagName());
+        LOG.fine(container.getText());
+        LOG.fine(container.getLocation().toString());
         for (WebElement webElement : links) {
-            LOG.info(webElement.getText());
+            LOG.fine(webElement.getText());
             LOG.fine(webElement.getAttribute("href"));
         }
     }

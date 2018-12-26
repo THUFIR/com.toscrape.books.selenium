@@ -25,7 +25,7 @@ class HomePage extends AbstractPage {
     }
 
     HomePage(WebDriver webDriver) {
-        LOG.info(webDriver.getCurrentUrl());
+        LOG.fine(webDriver.getCurrentUrl());
         this.webDriver = webDriver;
         PageFactory.initElements(webDriver, this);
     }
@@ -41,11 +41,11 @@ class HomePage extends AbstractPage {
     }
 
     public void frag() {
-        LOG.info(xpathString);
+        LOG.fine(xpathString);
         WebElement container;
         container = webDriver.findElement(By.xpath(xpathString));
         CatalogueFragment cf;
-        cf = new CatalogueFragment(webDriver, container);
+        cf = new CatalogueFragment(container);
         cf.iterate();
     }
 
