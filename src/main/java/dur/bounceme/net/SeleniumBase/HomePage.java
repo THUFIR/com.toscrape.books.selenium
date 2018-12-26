@@ -20,7 +20,7 @@ class HomePage extends AbstractPage {
     private List<WebElement> links;
 
 //    private final String xpathString = "//div[@class='side_categories']/ul/li/ul/li/a";
-    private final String xpathString = "//div[@class='side_categories']/ul/li/ul/li";
+    private final String xpathString = "//div[@class='side_categories']/ul/li/ul";
 
     private HomePage() {
     }
