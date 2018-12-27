@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxBinary;
@@ -41,7 +42,7 @@ public class WebDriverFactory {
     private void loadProps() throws MalformedURLException {
         LOG.fine(properties.toString());
         String driverTypeString = properties.getProperty("driverType");
-        NewEnum ne =  NewEnum.firefox;
+        NewEnum ne = NewEnum.firefox;
         url = new URL(properties.getProperty("url"));
         driver = properties.getProperty("driver");
         gecko = properties.getProperty("gecko");
@@ -59,6 +60,8 @@ public class WebDriverFactory {
         firefoxOptions = new FirefoxOptions();
         firefoxOptions.setBinary(firefoxBinary);
         webDriver = new FirefoxDriver(firefoxOptions);
+        webDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        webDriver.manage().window().maximize();
         webDriver.get(url.toString());
         LOG.fine(webDriver.getTitle());
         LOG.fine(webDriver.getCurrentUrl().toLowerCase());
@@ -69,3 +72,10 @@ public class WebDriverFactory {
     }
 
 }
+
+/*
+
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.manage().window().maximize();
+		config = new XMLConfiguration("object-config.xml");
+ */

@@ -5,19 +5,18 @@ import java.util.logging.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class CatalogueFragment /*extends HomePage */ {
+public class CategoryFragment {
 
-    private static final Logger LOG = Logger.getLogger(CatalogueFragment.class.getName());
-//    private WebDriver webDriver = null;
+    private static final Logger LOG = Logger.getLogger(CategoryFragment.class.getName());
     private WebElement container = null;
 
     @FindBy(xpath = "//ul/li/ul/li/a")
     private final List<WebElement> links = null;
 
-    private CatalogueFragment() {
+    private CategoryFragment() {
     }
 
-    public CatalogueFragment(WebElement container) {
+    public CategoryFragment(WebElement container) {
         LOG.info(container.getTagName());
         this.container = container;
     }
