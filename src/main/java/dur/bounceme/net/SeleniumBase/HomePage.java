@@ -40,7 +40,6 @@ class HomePage extends AbstractPage {
         LOG.fine(sideCategory);
         WebElement container = webDriver.findElement(By.xpath(sideCategory));
         CatalogueFragment catalogueFragment = new CatalogueFragment(container);
-        catalogueFragment.iterateCatalogue();
     }
 
 }
