@@ -22,7 +22,7 @@ public class CatalogueFragment {
     private void iterateCatalogue() {
         LOG.fine(container.toString());
         LOG.fine(container.getTagName());
-        LOG.fine(container.getText());
+        LOG.info(container.getText());
         LOG.fine(container.getLocation().toString());
         WebElement items = container.findElement(By.xpath(listItems));
         CategoryFragment categoryFragment = new CategoryFragment(items);
