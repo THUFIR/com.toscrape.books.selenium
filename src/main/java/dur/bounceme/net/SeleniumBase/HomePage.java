@@ -11,7 +11,7 @@ class HomePage extends AbstractPage {
     private static final Logger LOG = Logger.getLogger(App.class.getName());
     private WebDriver webDriver = null;
 
-    private final String sideCategory = "//div[@class='side_categories']/ul/li/ul";
+    private final String sideCategoryXPath = "//div[@class='side_categories']/ul/li/ul";
 
     private HomePage() {
     }
@@ -20,12 +20,11 @@ class HomePage extends AbstractPage {
         LOG.fine(webDriver.getCurrentUrl());
         this.webDriver = webDriver;
         PageFactory.initElements(webDriver, this);
-    }
+        LOG.fine(sideCategoryXPath);
+        WebElement sideCategoryContainer = webDriver.findElement(By.xpath(sideCategoryXPath));
+        LOG.info(sideCategoryContainer.getAttribute("innerHTML"));
+        Catalogue catalogueFragment = new Catalogue(sideCategoryContainer);
 
-    public void frag() {
-        LOG.fine(sideCategory);
-        WebElement container = webDriver.findElement(By.xpath(sideCategory));
-        Catalogue catalogueFragment = new Catalogue(container);
     }
 
 }

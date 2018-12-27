@@ -16,7 +16,7 @@ public class Catalogue {
     public Catalogue(WebElement container) {
         this.container = container;
         //    PageFactory.initElements((WebDriver) this.container, this);
-        LOG.info(container.getAttribute("innerHTML"));
+        LOG.fine(container.getAttribute("innerHTML"));
         WebElement items = container.findElement(By.xpath(listItems));
         Category categoryFragment = new Category(items);
     }

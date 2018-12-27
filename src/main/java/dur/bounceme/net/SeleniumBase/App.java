@@ -20,6 +20,5 @@ public class App {
         properties.loadFromXML(App.class.getResourceAsStream("/selenium.xml"));
         WebDriver webDriver = WebDriverFactory.getWebDriver(properties);
         HomePage homePage = new HomePage(webDriver);
-        homePage.frag();
     }
 }
