@@ -13,11 +13,13 @@ public class CategoryFragment {
     @FindBy(xpath = "//ul/li/ul/li/a")
     private final List<WebElement> links = null;
 
+    private final String categories = "//ul/li/ul";
+
     private CategoryFragment() {
     }
 
     public CategoryFragment(WebElement container) {
-        LOG.fine(container.getTagName());
+        LOG.info(container.getTagName());
         this.container = container;
     }
 
@@ -29,3 +31,16 @@ public class CategoryFragment {
     }
 
 }
+
+
+/*
+
+    public void frag() {
+        LOG.fine(xpathString);
+        WebElement container = webDriver.findElement(By.xpath(xpathString));
+        CatalogueFragment catalogueFragment = new CatalogueFragment(container);
+        catalogueFragment.iterate();
+    }
+
+
+*/
