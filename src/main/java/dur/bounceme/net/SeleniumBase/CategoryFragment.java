@@ -17,15 +17,15 @@ public class CategoryFragment {
     }
 
     public CategoryFragment(WebElement container) {
-        LOG.info(container.getTagName());
+        LOG.fine(container.getTagName());
         this.container = container;
     }
 
     public void iterate() {
-        LOG.info(container.toString());
-        LOG.info(container.getTagName());
+        LOG.fine(container.toString());
+        LOG.fine(container.getTagName());
         LOG.info(container.getText());
-        LOG.info(container.getLocation().toString());
+        LOG.fine(container.getLocation().toString());
     }
 
 }

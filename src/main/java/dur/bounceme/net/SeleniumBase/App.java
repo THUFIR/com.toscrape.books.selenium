@@ -12,6 +12,7 @@ public class App {
     private final String driverType = null;
 
     public static void main(String[] args) throws IOException {
+        LOG.info("starting..");
         new App().scrapeBooks();
     }
 
@@ -19,7 +20,7 @@ public class App {
         properties.loadFromXML(App.class.getResourceAsStream("/selenium.xml"));
         WebDriver webDriver = WebDriverFactory.getWebDriver(properties);
         HomePage homePage = new HomePage(webDriver);
-        homePage.populateCatalogue();
+     //   homePage.populateCatalogue();
         homePage.frag();
     }
 }

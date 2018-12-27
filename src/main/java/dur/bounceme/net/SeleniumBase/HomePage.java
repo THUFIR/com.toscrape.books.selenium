@@ -29,7 +29,7 @@ class HomePage extends AbstractPage {
         PageFactory.initElements(webDriver, this);
     }
 
-    public void populateCatalogue() {
+    private void populateCatalogue() {
         links.stream().map((webElement) -> {
             LOG.fine(webElement.getText());
             return webElement;
