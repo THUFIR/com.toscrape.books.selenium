@@ -10,7 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class Category {
 
-    private static final Logger LOG = Logger.getLogger(CatalogueFragment.class.getName());
+    private static final Logger LOG = Logger.getLogger(Catalogue.class.getName());
     private WebDriver webDriver = null;
     private WebElement container = null;
 
