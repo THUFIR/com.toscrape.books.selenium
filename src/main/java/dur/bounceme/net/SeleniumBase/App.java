@@ -12,7 +12,7 @@ public class App {
     private final String driverType = null;
 
     public static void main(String[] args) throws IOException {
-        LOG.info("starting..");
+        LOG.fine("starting..");
         new App().scrapeBooks();
     }
 
