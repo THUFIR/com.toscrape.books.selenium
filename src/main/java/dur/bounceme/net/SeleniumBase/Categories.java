@@ -5,21 +5,21 @@ import java.util.logging.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class Category {
+public class Categories {
 
-    private static final Logger LOG = Logger.getLogger(Category.class.getName());
+    private static final Logger LOG = Logger.getLogger(Categories.class.getName());
     private WebElement container = null;
 
     @FindBy(tagName = "a")
     private final List<WebElement> links = null;
 
-    private Category() {
+    private Categories() {
     }
 
-    public Category(WebElement container) {
+    public Categories(WebElement container) {
         LOG.info(container.getTagName());
         this.container = container;
-        LOG.fine(container.getAttribute("innerHTML"));
+        LOG.info(container.getAttribute("innerHTML"));
     }
 
 }
