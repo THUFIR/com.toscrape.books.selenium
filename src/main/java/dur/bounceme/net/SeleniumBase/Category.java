@@ -17,7 +17,7 @@ public class Category {
     }
 
     public Category(WebElement container) {
-        LOG.fine(container.getTagName());
+        LOG.info(container.getTagName());
         this.container = container;
         LOG.fine(container.getAttribute("innerHTML"));
     }
