@@ -23,19 +23,16 @@ public class Catalog {
 
     public Catalog(WebDriver webDriver, WebElement container) {
         this.container = container;
-        LOG.fine(container.getAttribute("innerHTML"));
+        LOG.info(container.getAttribute("innerHTML"));
         PageFactory.initElements(webDriver, this);
     }
 
     public void iterateCatalog() {
         LOG.info("trying to iterate..");
-        //   LOG.info(container.toString());
-        //   LOG.info(container.getTagName());
-        //   LOG.info(container.getText());
-        //   LOG.info(container.getLocation().toString());
         ListIterator<WebElement> itemsIterator = listItems.listIterator();
         while (itemsIterator.hasNext()) {
             LOG.info(itemsIterator.next().getText());
+            //Category category = new Category(webDriver,container);
         }
     }
 }
