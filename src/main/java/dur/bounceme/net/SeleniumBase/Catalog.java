@@ -20,12 +20,16 @@ public class Catalog {
     private Catalog() {
     }
 
-    public Catalog(WebElement container) {
+    private Catalog(WebElement container) {
         this.container = container;
         LOG.info(container.getAttribute("innerHTML"));
         PageFactory.initElements((WebDriver) this.container, this);
         WebElement items = container.findElement(By.xpath(listItem));
         Category categoryFragment = new Category(items);
+    }
+
+    Catalog(WebDriver webDriver) {
+        PageFactory.initElements(webDriver, this);
     }
 
     public void iterate() {
