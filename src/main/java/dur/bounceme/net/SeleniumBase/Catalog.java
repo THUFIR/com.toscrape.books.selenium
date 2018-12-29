@@ -13,6 +13,7 @@ public class Catalog {
     private static final Logger LOG = Logger.getLogger(Catalog.class.getName());
     private WebElement container = null;
     private final String listItem = "//ul";
+    private final WebDriver webDriver = null;
 
     @FindBy(xpath = "//ul/li/ul/li/a")
     private final List<WebElement> listItems = null;
@@ -20,26 +21,20 @@ public class Catalog {
     private Catalog() {
     }
 
-    private Catalog(WebElement container) {
+    public Catalog(WebDriver webDriver, WebElement container) {
         this.container = container;
         LOG.info(container.getAttribute("innerHTML"));
         PageFactory.initElements((WebDriver) this.container, this);
-        WebElement items = container.findElement(By.xpath(listItem));
-        Category categoryFragment = new Category(items);
-    }
 
-    Catalog(WebDriver webDriver) {
-        PageFactory.initElements(webDriver, this);
-    }
-
-    public void iterate() {
         LOG.fine(container.toString());
         LOG.fine(container.getTagName());
         LOG.fine(container.getText());
         LOG.fine(container.getLocation().toString());
+        WebElement items = container.findElement(By.xpath(listItem));
         for (WebElement webElement : listItems) {
             LOG.fine(webElement.getText());
             LOG.info(webElement.getAttribute("href"));
+            Category category = new Category(webDriver, container);
         }
     }
 }

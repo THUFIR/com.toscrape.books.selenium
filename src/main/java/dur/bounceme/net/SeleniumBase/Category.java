@@ -9,16 +9,14 @@ public class Category {
 
     private static final Logger LOG = Logger.getLogger(Category.class.getName());
     private WebElement container = null;
-
+    private final WebDriver webdriver = null;
     private Category() {
     }
 
-    public Category(WebElement container) {
-        LOG.fine(container.getTagName());
-        this.container = container;
+    public Category(WebDriver webDriver, WebElement container) {
         PageFactory.initElements((WebDriver) container, this);
+        this.container = container;
         LOG.fine(container.getAttribute("innerHTML"));
     }
-
 
 }

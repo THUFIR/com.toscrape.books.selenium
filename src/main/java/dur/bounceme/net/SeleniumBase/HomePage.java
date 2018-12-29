@@ -24,6 +24,7 @@ class HomePage extends AbstractPage {
         WebElement sideCategoryContainer = webDriver.findElement(By.xpath(sideCategoryXPath));
         LOG.fine(sideCategoryContainer.getAttribute("innerHTML"));
 //        Catalog catalogueFragment = new Catalog(sideCategoryContainer);
+        Catalog catalog = new Catalog(webDriver, sideCategoryContainer);
     }
 
 }
