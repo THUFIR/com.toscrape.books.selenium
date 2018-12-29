@@ -9,7 +9,7 @@ public class App {
 
     private static final Logger LOG = Logger.getLogger(App.class.getName());
     private final Properties properties = new Properties();
-    private final String driverType = null;
+//    private WebElement container = null;
 
     public static void main(String[] args) throws IOException {
         LOG.fine("starting..");
@@ -20,6 +20,7 @@ public class App {
         properties.loadFromXML(App.class.getResourceAsStream("/selenium.xml"));
         WebDriver webDriver = WebDriverFactory.getWebDriver(properties);
         HomePage homePage = new HomePage(webDriver);
+        homePage.populateCatalog();
     }
 
 }

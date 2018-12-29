@@ -23,9 +23,11 @@ public class Catalog {
 
     public Catalog(WebDriver webDriver, WebElement container) {
         this.container = container;
-        LOG.info(container.getAttribute("innerHTML"));
-        PageFactory.initElements((WebDriver) this.container, this);
+        LOG.fine(container.getAttribute("innerHTML"));
+        PageFactory.initElements(webDriver, this);
+    }
 
+    public void iterateCatalog() {
         LOG.fine(container.toString());
         LOG.fine(container.getTagName());
         LOG.fine(container.getText());
@@ -33,8 +35,9 @@ public class Catalog {
         WebElement items = container.findElement(By.xpath(listItem));
         for (WebElement webElement : listItems) {
             LOG.fine(webElement.getText());
-            LOG.info(webElement.getAttribute("href"));
+            LOG.fine(webElement.getAttribute("href"));
             Category category = new Category(webDriver, container);
+            category.iterateThisCategory();
         }
     }
 }
