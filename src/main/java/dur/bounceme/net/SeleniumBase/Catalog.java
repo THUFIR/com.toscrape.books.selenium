@@ -13,7 +13,6 @@ public class Catalog {
 
     private static final Logger LOG = Logger.getLogger(Catalog.class.getName());
     private WebElement container = null;
-//    private final String listItem = "//ul";
     private final WebDriver webDriver = null;
 
     @FindBy(xpath = "//ul/li/ul/li/a")
@@ -24,19 +23,19 @@ public class Catalog {
 
     public Catalog(WebDriver webDriver, WebElement container) {
         this.container = container;
-        LOG.info(container.getAttribute("innerHTML"));
+        LOG.fine(container.getAttribute("innerHTML"));
         PageFactory.initElements(webDriver, this);
     }
 
     public void iterateCatalog() {
-        LOG.info(container.toString());
-        LOG.info(container.getTagName());
-        LOG.info(container.getText());
-        LOG.info(container.getLocation().toString());
+        LOG.info("trying to iterate..");
+        //   LOG.info(container.toString());
+        //   LOG.info(container.getTagName());
+        //   LOG.info(container.getText());
+        //   LOG.info(container.getLocation().toString());
         ListIterator<WebElement> itemsIterator = listItems.listIterator();
         while (itemsIterator.hasNext()) {
             LOG.info(itemsIterator.next().getText());
         }
-
     }
 }
