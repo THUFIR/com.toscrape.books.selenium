@@ -8,19 +8,19 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class Catalogue {
+public class Catalog {
 
-    private static final Logger LOG = Logger.getLogger(Catalogue.class.getName());
+    private static final Logger LOG = Logger.getLogger(Catalog.class.getName());
     private WebElement container = null;
     private final String listItem = "//ul";
 
     @FindBy(xpath = "//ul/li/ul/li/a")
     private final List<WebElement> listItems = null;
 
-    private Catalogue() {
+    private Catalog() {
     }
 
-    public Catalogue(WebElement container) {
+    public Catalog(WebElement container) {
         this.container = container;
         LOG.info(container.getAttribute("innerHTML"));
         PageFactory.initElements((WebDriver) this.container, this);
