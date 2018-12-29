@@ -15,12 +15,12 @@ public class Category {
     }
 
     public Category(WebDriver webDriver, WebElement container) {
-        LOG.fine("new category..");
+        LOG.info("new category..");
         this.container = container;
         PageFactory.initElements(webDriver, container);
     }
 
     public void iterateThisCategory() {
-        LOG.fine(container.getAttribute("innerHTML"));
+        LOG.info(container.getAttribute("innerHTML"));
     }
 }

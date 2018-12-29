@@ -32,7 +32,8 @@ public class Catalog {
         ListIterator<WebElement> itemsIterator = listItems.listIterator();
         while (itemsIterator.hasNext()) {
             LOG.info(itemsIterator.next().getText());
-            //Category category = new Category(webDriver,container);
+            Category category = new Category(webDriver,container);
+            category.iterateThisCategory();
         }
     }
 }
