@@ -24,18 +24,18 @@ public class Catalog {
 
     public Catalog(WebDriver webDriver, WebElement container) {
         this.container = container;
-        LOG.fine(container.getAttribute("innerHTML"));
+        LOG.info(container.getAttribute("innerHTML"));
         PageFactory.initElements(webDriver, this);
     }
 
     public void iterateCatalog() {
-        LOG.fine(container.toString());
-        LOG.fine(container.getTagName());
-        LOG.fine(container.getText());
-        LOG.fine(container.getLocation().toString());
-        ListIterator<WebElement> foo = listItems.listIterator();
-        while (foo.hasNext()) {
-            LOG.info(foo.next().getText());
+        LOG.info(container.toString());
+        LOG.info(container.getTagName());
+        LOG.info(container.getText());
+        LOG.info(container.getLocation().toString());
+        ListIterator<WebElement> itemsIterator = listItems.listIterator();
+        while (itemsIterator.hasNext()) {
+            LOG.info(itemsIterator.next().getText());
         }
 
     }
