@@ -35,9 +35,12 @@ public class Catalog {
         LOG.info("trying to iterate..");
         LOG.info(catalogElements.toString());
 
-       // List<String> f = catalogElements.stream().map(WebElement::getText).collect(Collectors.toList());
-
-     //   LOG.info(f.toString());
+        // List<String> f = catalogElements.stream().map(WebElement::getText).collect(Collectors.toList());
+        ListIterator<WebElement> li = catalogElements.listIterator();
+        while (li.hasNext()) {
+            LOG.info(li.next().getTagName());
+            LOG.info(li.next().getText());
+        }
+        //   LOG.info(f.toString());
     }
 }
-
