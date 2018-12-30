@@ -39,7 +39,8 @@ public class Catalog {
         ListIterator<WebElement> li = catalogElements.listIterator();
         while (li.hasNext()) {
             LOG.info(li.next().getTagName());
-            LOG.info(li.next().getText());
+            LOG.info(li.next().getAttribute("href"));
+//            LOG.info(li.next());
         }
         //   LOG.info(f.toString());
     }
