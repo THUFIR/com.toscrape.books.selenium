@@ -1,7 +1,5 @@
 package dur.bounceme.net.SeleniumBase;
 
-//      https://sqa.stackexchange.com/questions/37093/scrape-items-from-an-html-list
-
 import java.util.List;
 import java.util.ListIterator;
 import java.util.logging.Logger;
