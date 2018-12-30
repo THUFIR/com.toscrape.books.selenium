@@ -1,5 +1,7 @@
 package dur.bounceme.net.SeleniumBase;
 
+//      https://sqa.stackexchange.com/questions/37093/scrape-items-from-an-html-list
+
 import java.util.List;
 import java.util.ListIterator;
 import java.util.logging.Logger;
@@ -22,19 +24,19 @@ public class Catalog {
 
     public Catalog(WebDriver webDriver, WebElement container) {
         this.container = container;
-        LOG.fine(container.getAttribute("innerHTML"));
+        LOG.info(container.getAttribute("innerHTML"));
         PageFactory.initElements(webDriver, this);
     }
 
     public void iterateCatalogElements() {
-        LOG.info("trying to iterate..");
+        LOG.fine("trying to iterate..");
         LOG.fine(catalogElements.toString());
         ListIterator<WebElement> li = catalogElements.listIterator();
         WebElement listItem = null;
         while (li.hasNext()) {
             listItem = li.next();
-            LOG.info(li.next().getTagName());
-            LOG.info(li.next().getText());
+            LOG.fine(li.next().getTagName());
+            LOG.fine(li.next().getText());
             Category c = new Category(webDriver, listItem);
         }
     }
