@@ -23,15 +23,21 @@ public class Catalog {
 
     public Catalog(WebDriver webDriver, WebElement container) {
         this.container = container;
-        LOG.info(container.getAttribute("innerHTML"));
+        LOG.fine(container.getAttribute("innerHTML"));
         PageFactory.initElements(webDriver, this);
     }
 
     public void iterateCatalog() {
         LOG.info("trying to iterate..");
+
+
+
+        //        sideCategoryContainer = webDriver.findElement(By.xpath(sideCategoryXPath));
+
+        
         ListIterator<WebElement> itemsIterator = listItems.listIterator();
         while (itemsIterator.hasNext()) {
-            LOG.info(itemsIterator.next().getText());
+            LOG.fine(itemsIterator.next().getText());
             Category category = new Category(webDriver,container);
             category.iterateThisCategory();
         }

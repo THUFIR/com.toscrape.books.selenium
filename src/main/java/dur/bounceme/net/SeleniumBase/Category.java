@@ -18,9 +18,9 @@ public class Category {
         LOG.info("new category..");
         this.container = container;
         PageFactory.initElements(webDriver, container);
+        LOG.info(container.getAttribute("innerHTML"));
     }
 
     public void iterateThisCategory() {
-        LOG.info(container.getAttribute("innerHTML"));
     }
 }
