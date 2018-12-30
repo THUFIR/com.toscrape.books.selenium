@@ -35,9 +35,9 @@ public class Catalog {
         LOG.info("trying to iterate..");
         LOG.info(catalogElements.toString());
 
-        List<String> f = catalogElements.stream().map(WebElement::getText).collect(Collectors.toList());
+       // List<String> f = catalogElements.stream().map(WebElement::getText).collect(Collectors.toList());
 
-        LOG.info(f.toString());
+     //   LOG.info(f.toString());
     }
 }
 
