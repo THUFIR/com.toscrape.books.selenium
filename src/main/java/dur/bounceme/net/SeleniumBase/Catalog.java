@@ -18,6 +18,9 @@ public class Catalog {
     @FindBy(xpath = "//ul/li/ul/li/a")
     private final List<WebElement> listItems = null;
 
+    @FindBy(xpath = "//div[@id='container']")
+    List<WebElement> elements = null;
+
     private Catalog() {
     }
 
@@ -30,15 +33,11 @@ public class Catalog {
     public void iterateCatalog() {
         LOG.info("trying to iterate..");
 
-
-
         //        sideCategoryContainer = webDriver.findElement(By.xpath(sideCategoryXPath));
-
-        
         ListIterator<WebElement> itemsIterator = listItems.listIterator();
         while (itemsIterator.hasNext()) {
             LOG.fine(itemsIterator.next().getText());
-            Category category = new Category(webDriver,container);
+            Category category = new Category(webDriver, container);
             category.iterateThisCategory();
         }
     }
