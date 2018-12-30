@@ -14,7 +14,7 @@ public class Catalog {
     private WebElement container = null;
     private final WebDriver webDriver = null;
 
-    @FindBy(xpath = "//li/a")
+    @FindBy(xpath = "//li")
     List<WebElement> catalogElements = null;
 
     private Catalog() {
