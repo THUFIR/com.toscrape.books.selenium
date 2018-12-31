@@ -20,16 +20,21 @@ public class Catalog {
     @FindBy(xpath = "/span[@class=title])[last()]")
     WebElement last = null;
 
+    
+//    @FindBy(xpath = "*[@id=’Crime’]/ul/li[3]/a")
+    @FindBy(xpath = "*[@id=’Crime’]/ul/li/a")
+    WebElement oneCategory = null;
+    
     private Catalog() {
     }
 
     public Catalog(WebDriver webDriver, WebElement catalogContainer) {
         this.catalogContainer = catalogContainer;
-        LOG.info(catalogContainer.getAttribute("innerHTML"));
         PageFactory.initElements(webDriver, this);
         LOG.info("after init");
         LOG.info(catalogContainer.getAttribute("innerHTML"));
-
+        LOG.info(oneCategory.toString());
+        LOG.info(oneCategory.getText());        
     }
 
     public void iterateCatalogElements() {
