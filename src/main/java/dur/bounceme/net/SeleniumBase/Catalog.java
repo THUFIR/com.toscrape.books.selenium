@@ -14,13 +14,11 @@ public class Catalog {
     private WebElement catalogContainer = null;
     private final WebDriver webDriver = null;
 
-    @FindBy(xpath = "/li")
-    List<WebElement> catalogElements = null;
-
+    //   @FindBy(xpath = "/li")
+    //   List<WebElement> catalogElements = null;
     //span[@class='title'])[la­st()]
-    @FindBy(xpath = "/span[@class=title])[last()]")
-    WebElement last = null;
-
+    //   @FindBy(xpath = "/span[@class=title])[last()]")
+    //  WebElement last = null;
     private Catalog() {
     }
 
@@ -28,15 +26,18 @@ public class Catalog {
         this.catalogContainer = catalogContainer;
         LOG.info(catalogContainer.getAttribute("innerHTML"));
         PageFactory.initElements(webDriver, this);
+        LOG.info("after init");
+        LOG.info(catalogContainer.getAttribute("innerHTML"));
+
     }
 
     public void iterateCatalogElements() {
-        LOG.info("trying to iterate..");
-        //      LOG.info(catalogContainer.toString());
-//        LOG.info(catalogElements.toString());
-//        LOG.info(last.toString());
+        LOG.info("starting..");
+    //    LOG.info(catalogContainer.getAttribute("innerHTML"));
+        //LOG.info(last.getText());
     }
 
+    /*
     public void iterateCatalogElements0() {
         LOG.info("trying to iterate..");
         LOG.info(catalogContainer.toString());
@@ -51,4 +52,5 @@ public class Catalog {
             Category c = new Category(webDriver, listItem);
         }
     }
+     */
 }
