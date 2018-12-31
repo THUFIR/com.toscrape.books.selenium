@@ -17,19 +17,31 @@ public class Catalog {
     @FindBy(xpath = "/li")
     List<WebElement> catalogElements = null;
 
+    //span[@class='title'])[la­st()]
+    @FindBy(xpath = "/span[@class=title])[last()]")
+    WebElement last = null;
+
     private Catalog() {
     }
 
     public Catalog(WebDriver webDriver, WebElement catalogContainer) {
         this.catalogContainer = catalogContainer;
-        LOG.fine(catalogContainer.getAttribute("innerHTML"));
+        LOG.info(catalogContainer.getAttribute("innerHTML"));
         PageFactory.initElements(webDriver, this);
     }
 
     public void iterateCatalogElements() {
         LOG.info("trying to iterate..");
+        //      LOG.info(catalogContainer.toString());
+//        LOG.info(catalogElements.toString());
+//        LOG.info(last.toString());
+    }
+
+    public void iterateCatalogElements0() {
+        LOG.info("trying to iterate..");
         LOG.info(catalogContainer.toString());
         LOG.info(catalogElements.toString());
+        LOG.info(last.toString());
         ListIterator<WebElement> li = catalogElements.listIterator();
         WebElement listItem = null;
         while (li.hasNext()) {
