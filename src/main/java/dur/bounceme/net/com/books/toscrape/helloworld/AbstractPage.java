@@ -1,4 +1,4 @@
-package dur.bounceme.net.SeleniumBase;
+package dur.bounceme.net.com.books.toscrape.helloworld;
 
 import java.util.logging.Logger;
 

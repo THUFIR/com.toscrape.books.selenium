@@ -1,4 +1,4 @@
-package dur.bounceme.net.SeleniumBase;
+package dur.bounceme.net.com.books.toscrape.helloworld;
 
 import java.net.MalformedURLException;
 import java.net.URL;
