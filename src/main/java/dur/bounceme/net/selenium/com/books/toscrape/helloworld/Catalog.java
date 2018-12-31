@@ -1,7 +1,6 @@
-package dur.bounceme.net.com.books.toscrape.helloworld;
+package dur.bounceme.net.selenium.com.books.toscrape.helloworld;
 
 import java.util.List;
-import java.util.ListIterator;
 import java.util.logging.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

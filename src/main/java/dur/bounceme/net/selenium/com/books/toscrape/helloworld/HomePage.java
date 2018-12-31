@@ -1,4 +1,4 @@
-package dur.bounceme.net.com.books.toscrape.helloworld;
+package dur.bounceme.net.selenium.com.books.toscrape.helloworld;
 
 import java.util.logging.Logger;
 import org.openqa.selenium.By;

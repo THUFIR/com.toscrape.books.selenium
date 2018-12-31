@@ -1,4 +1,4 @@
-package dur.bounceme.net.com.books.toscrape.helloworld;
+package dur.bounceme.net.selenium.com.books.toscrape.helloworld;
 
 import java.io.IOException;
 import java.util.Properties;
