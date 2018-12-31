@@ -16,15 +16,13 @@ public class Catalog {
     @FindBy(xpath = "/li")
     List<WebElement> catalogElements = null;
     //span[@class='title'])[la­st()]
-    
+
     @FindBy(xpath = "/span[@class=title])[last()]")
     WebElement last = null;
 
-    
-//    @FindBy(xpath = "*[@id=’Crime’]/ul/li[3]/a")
     @FindBy(xpath = "*[@id=’Crime’]/ul/li/a")
     WebElement oneCategory = null;
-    
+
     private Catalog() {
     }
 
@@ -34,7 +32,7 @@ public class Catalog {
         LOG.info("after init");
         LOG.info(catalogContainer.getAttribute("innerHTML"));
         LOG.info(oneCategory.toString());
-        LOG.info(oneCategory.getText());        
+        LOG.info(oneCategory.getText());
     }
 
     public void iterateCatalogElements() {
