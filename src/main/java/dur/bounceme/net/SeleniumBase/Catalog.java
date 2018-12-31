@@ -11,24 +11,25 @@ import org.openqa.selenium.support.PageFactory;
 public class Catalog {
 
     private static final Logger LOG = Logger.getLogger(Catalog.class.getName());
-    private WebElement container = null;
+    private WebElement catalogContainer = null;
     private final WebDriver webDriver = null;
 
-    @FindBy(xpath = "//li")
+    @FindBy(xpath = "/li")
     List<WebElement> catalogElements = null;
 
     private Catalog() {
     }
 
-    public Catalog(WebDriver webDriver, WebElement container) {
-        this.container = container;
-        LOG.info(container.getAttribute("innerHTML"));
+    public Catalog(WebDriver webDriver, WebElement catalogContainer) {
+        this.catalogContainer = catalogContainer;
+        LOG.fine(catalogContainer.getAttribute("innerHTML"));
         PageFactory.initElements(webDriver, this);
     }
 
     public void iterateCatalogElements() {
-        LOG.fine("trying to iterate..");
-        LOG.fine(catalogElements.toString());
+        LOG.info("trying to iterate..");
+        LOG.info(catalogContainer.toString());
+        LOG.info(catalogElements.toString());
         ListIterator<WebElement> li = catalogElements.listIterator();
         WebElement listItem = null;
         while (li.hasNext()) {
